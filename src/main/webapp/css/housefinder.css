@@ -1,0 +1,184 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    height: 100%;
+}
+
+#cityName {
+    margin-bottom: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    cursor:pointer;
+}
+
+.container {
+    margin: 10px;
+    z-index: 0; 
+    cursor: pointer; 
+    left: 0px; 
+    top: 0px;
+    direction: ltr;
+    overflow: hidden;
+    color: rgb(86, 86, 86); font-family: Roboto, Arial, sans-serif; 
+    -webkit-user-select: none; 
+    font-size: 11px; 
+    padding: 8px; 
+    -webkit-background-clip: padding-box; 
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; 
+    border-left-width: 0px; 
+    min-width: 40px; 
+    background-color: rgb(255, 255, 255); 
+    background-clip: padding-box;
+    border-radius: 2px; 
+}
+
+.container .content {
+    display: none;
+    padding:1px;
+}
+
+.container .header{
+    text-align: center;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 20px;
+}
+
+.option{
+    margin: 10px;
+    z-index: 0; 
+    direction: ltr;
+    overflow: hidden;
+    padding: 8px; 
+    color: rgb(86, 86, 86); 
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 20px;
+    -webkit-user-select: none; 
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; 
+    border-radius: 2px; 
+    cursor: pointer; 
+    width: 28px; 
+    height: 55px; 
+    background-color: rgb(255, 255, 255);
+    background-clip: padding-box; 
+}
+
+.circlecontainer{
+    position: relative; 
+    width: 28px; 
+    height: 27px; 
+    left: 0px; 
+    top: 0px;
+}
+
+.circlecontent{
+    overflow: hidden; 
+    position: absolute; 
+    width: 15px; 
+    height: 15px; 
+    left: 8px; 
+    top: 6px;
+}
+
+.circle {
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-color: red;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-radius: 100%;
+    position: relative;
+    cursor:pointer;
+}
+
+span.close_cross{
+    position: relative;
+    top: -9px;
+    left: -1px;
+    color: red;
+    font-size: 24px;
+}
+
+.separator{
+    position: relative; 
+    overflow: hidden; 
+    width: 67%; height: 1px; 
+    left: 16%; 
+    top: 0px; 
+    background-color: rgb(230, 230, 230);
+}
+
+.houses{
+    padding: 5px;
+    position: relative; 
+    width: 28px; 
+    height: 27px; 
+    left: 0px; 
+    top: 0px;
+}
+
+.houses.content{
+    overflow: hidden; 
+    position: absolute; 
+    width: 15px; 
+    height: 15px; 
+    left: 7px; 
+    top: 6px;
+}
+
+.crossedhouse{
+    width:15px;
+    height:15px;
+    font-size:20px;
+}
+
+.crossedhouse:before{
+    content:'';
+    position:absolute;
+    width:15px;
+    height:2px;
+    background-color:black;
+    border-radius:2px;
+    top:17px;
+    box-shadow:0 0 2px 0 #ccc;
+}
+
+.crossedhouse:before{
+    -webkit-transform:rotate(39deg);
+    -moz-transform:rotate(39deg);
+    transform:rotate(39deg);
+    left:7px;
+}
+
+.search{
+	margin: 10px;
+    color: rgb(86, 86, 86); font-family: Roboto, Arial, sans-serif; 
+    font-size: 11px; 
+    border-radius: 2px; 
+}
+.center{
+	direction: ltr; 
+	overflow: hidden; 
+	text-align: center; 
+	position: relative; 
+	color: rgb(86, 86, 86); 
+	font-family: Roboto, Arial, sans-serif; 
+	-webkit-user-select: none; 
+	font-size: 11px; 
+	padding: 8px; 
+	border-bottom-right-radius: 2px; 
+	border-top-right-radius: 2px; 
+	-webkit-background-clip: padding-box; 
+	box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; 
+	border-left-width: 0px; min-width: 42px; 
+	background-color: rgb(255, 255, 255); 
+	background-clip: padding-box;
+}
