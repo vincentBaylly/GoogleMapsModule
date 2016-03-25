@@ -19,7 +19,8 @@ a {
 }
 
 .container {
-    margin: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
     z-index: 0; 
     cursor: pointer; 
     left: 0px; 
@@ -36,7 +37,8 @@ a {
     min-width: 40px; 
     background-color: rgb(255, 255, 255); 
     background-clip: padding-box;
-    border-radius: 2px; 
+    border-bottom-left-radius: 2px; 
+    border-top-left-radius: 2px;
 }
 
 .container .content {
@@ -45,7 +47,6 @@ a {
 }
 
 .container .header{
-    text-align: center;
     font-family: Roboto, Arial, sans-serif;
     font-size: 20px;
 }
@@ -63,8 +64,6 @@ a {
     box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; 
     border-radius: 2px; 
     cursor: pointer; 
-    width: 28px; 
-    height: 55px; 
     background-color: rgb(255, 255, 255);
     background-clip: padding-box; 
 }
@@ -165,20 +164,22 @@ span.close_cross{
     border-radius: 2px; 
 }
 .center{
-	direction: ltr; 
-	overflow: hidden; 
-	text-align: center; 
-	position: relative; 
-	color: rgb(86, 86, 86); 
-	font-family: Roboto, Arial, sans-serif; 
-	-webkit-user-select: none; 
-	font-size: 11px; 
-	padding: 8px; 
-	border-bottom-right-radius: 2px; 
-	border-top-right-radius: 2px; 
-	-webkit-background-clip: padding-box; 
-	box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; 
-	border-left-width: 0px; min-width: 42px; 
-	background-color: rgb(255, 255, 255); 
-	background-clip: padding-box;
+    margin-top: 10px;
+    z-index: 0; 
+    cursor: pointer;
+    direction: ltr;
+    overflow: hidden;
+    color: rgb(86, 86, 86); 
+    font-family: Roboto, Arial, sans-serif; 
+    -webkit-user-select: none; 
+    font-size: 11px; 
+    padding: 13.5px; 
+    -webkit-background-clip: padding-box; 
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px; 
+    border-left-width: 0px; 
+    min-width: 40px; 
+    background-color: rgb(255, 255, 255); 
+    background-clip: padding-box;
+    border-bottom-right-radius: 2px; 
+    border-top-right-radius: 2px;
 }

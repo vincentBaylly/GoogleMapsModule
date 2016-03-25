@@ -25,9 +25,10 @@ function initMap() {
     });
 
     var container = document.getElementById("container");
+    var option = document.getElementById("center");
     var option = document.getElementById("option");
-	var search = document.getElementById("search");
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(container);
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(center);
     map.controls[google.maps.ControlPosition.TOP_RIGHT].push(option);
     map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(search);
 
@@ -120,12 +121,16 @@ $(document).ready(function () {
         $content.slideToggle(500, function () {
             //execute this after slideToggle is done
             //change text of header based on visibility of content div
-            $header.text(function () {
-                //change text based on condition
-                return $content.is(":visible") ? "-" : "+";
-            });
+            if ($content.is(":visible")) {
+                document.getElementById("header").innerHTML = "<span style=\"margin-left:15px;\">-</span>";
+            } else {
+                document.getElementById("header").innerHTML = "<span style=\"margin-left:15px;\">+</span>";
+            }
+//            $header.text(function () {
+//                //change text based on condition
+//                return $content.is(":visible") ? "-" : "+";
+//            });
         });
-
     });
 
     $(".disable").click(function () {
@@ -168,9 +173,7 @@ $(document).ready(function () {
             }
         }
     });
-
 });
-
 function createInfoWindow(marker) {
 
     for (i = 0; i < houses.length; i++) {
@@ -197,16 +200,6 @@ function createInfoWindow(marker) {
             break;
         }
     }
-}
-
-function loadInfoWindow(marker) {
-	for (i = 0; i < houses.length; i++) {
-		if (houses[i].title === marker.getTitle()) {
-
-			createInfoWindow(marker, houses[i]);
-			break;
-		}
-	}
 }
 
 function removeCity() {
