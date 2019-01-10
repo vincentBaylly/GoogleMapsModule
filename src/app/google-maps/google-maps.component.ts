@@ -40,7 +40,7 @@ export class GoogleMapsComponent implements OnInit {
   * The height that defines the size of the map
   */
   //@Input()
-  private height: string = '300px';
+  private height: string = '500px';
 
   /**
    * The longitude that defines the center of the map.
@@ -63,7 +63,7 @@ export class GoogleMapsComponent implements OnInit {
 
       this.map = new google.maps.Map(document.getElementById('map'), {
         center: latlng,
-        zoom: 4
+        zoom: 9
       });
 
       new google.maps.Marker({
@@ -85,33 +85,41 @@ export class GoogleMapsComponent implements OnInit {
         let full_address:string = listingRow.address.street || "";
         if (listingRow.address.city) full_address = full_address + " " + listingRow.address.city;
         if (listingRow.address.province) full_address = full_address + " " + listingRow.address.province;
-        let location = this.findLocation(full_address);
-        console.log(full_address);
-        let latlng = new google.maps.LatLng(location.lat, location.lng);
+        if(full_address){
+          this.findLocation(full_address, (location) => {
+            let latlng = new google.maps.LatLng(location.lat, location.lng);
 
-        new google.maps.Marker({
-          position: latlng,
-          map: this.map,
-          title: full_address
-        });
-
+            new google.maps.Marker({
+              position: latlng,
+              map: this.map,
+              title: full_address
+            });
+          });
+        }
       }
     });
   }
 
-  findLocation(address):Location  {
+  findLocation(address, getAdress) {
 
-    let location : Location;
+    let location:Location = {
+      lat: 0,
+      lng: 0,
+      marker: {
+        lat: 0,
+        lng: 0,
+        draggable: true
+      },
+      zoom: 0
+    };
 
     if (!this.geocoder) this.geocoder = new google.maps.Geocoder();
     this.geocoder.geocode({
       'address': address
     }, (results, status) => {
-      console.log(results);
       if (status == google.maps.GeocoderStatus.OK) {
         for (var i = 0; i < results[0].address_components.length; i++) {
           let types = results[0].address_components[i].types
-          console.log(types);
 
           if (types.indexOf('locality') != -1) {
             location.address_level_2 = results[0].address_components[i].long_name
@@ -135,14 +143,12 @@ export class GoogleMapsComponent implements OnInit {
           location.viewport = results[0].geometry.viewport;
         }
 
-        this.map.triggerResize();
+        getAdress(location);
 
       } else {
-        alert("Sorry, this search produced no results.");
+        console.warn('The address: ' + address + ' as not be found');
       }
     });
-
-    return location;
   }
 
 }
