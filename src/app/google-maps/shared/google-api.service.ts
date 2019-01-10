@@ -6,7 +6,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { Listings } from '../../model/listing.classes';
 import { MessageService } from '../../shared/message.service';
 
-const API_KEY = 'AIzaSyCSJ4lLjYEbl1a1F-ynTrdY3BwIkvHAklc';
+const API_KEY = '[Insert APIKEY here]';
 const url = 'https://maps.googleapis.com/maps/api/js?key='+ API_KEY +'&callback=initMap';
 
 const httpOptions = {
