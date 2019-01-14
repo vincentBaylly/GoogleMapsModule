@@ -3,10 +3,10 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 
-import { Listings } from '../../model/listing.classes';
+import { Listings } from '../../model/map.classes';
 import { MessageService } from '../../shared/message.service';
 
-const API_KEY = '[Insert APIKEY here]';
+const API_KEY = '[Insert API Key Here]';
 const url = 'https://maps.googleapis.com/maps/api/js?key='+ API_KEY +'&callback=initMap';
 
 const httpOptions = {
@@ -50,7 +50,7 @@ export class GoogleApiService {
 
   findFeaturedHomes(): Observable<Listings> {
     return this.http.get<Listings>(`${this.listingsUrl}/?regions%5B%5D=4&subtype%5B%5D=4&is_for_sale=1&with_builders=1&parent=1&sort=-published_at&page%5Bnumber%5D=1&province=qc&page%5Bsize%5D=11&include=builders`, httpOptions).pipe(
-      tap(_ => this.log(`found heroes matching regions%5B%5D=4&subtype%5B%5D=4&is_for_sale=1&with_builders=1&parent=1&sort=-published_at&page%5Bnumber%5D=1&province=qc&page%5Bsize%5D=11&include=builders`)),
+      tap(_ => this.log(`found houses matching regions%5B%5D=4&subtype%5B%5D=4&is_for_sale=1&with_builders=1&parent=1&sort=-published_at&page%5Bnumber%5D=1&province=qc&page%5Bsize%5D=11&include=builders`)),
       catchError(this.handleError<Listings>('findFeaturedHomes'))
     );
   }

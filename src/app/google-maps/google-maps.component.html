@@ -1,1 +1,36 @@
 <div id="map" [style.height]="height"></div>
+<div class="container" id="container">
+    <div class="header" id="header" (click)="openCityList()">
+      <mat-icon class="white-icon">{{icon}}</mat-icon>
+    </div>
+</div>
+<div id="citylist" [ngClass]="status ? 'showcity' : 'hidecity'">
+    <p id="cityName">
+        <a class="addcity" id="addcity" (click)="addCity()" data-marker="addcity">Ajouter Ville</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Grand-Mere">Grand-Mere</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Herouxville">Herouxville</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Lac-a-la-Tortue">Lac-a-la-Tortue</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Notre-Dame-du-Mont-Carmel">Notre-Dame-du-Mont-Carmel</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Saint-Barnabe">Saint-Barnabe</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Saint-Boniface-de-Shawinigan">Saint-Boniface-de-Shawinigan</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Saint-Elie-de-Caxton">Saint-Elie-de-Caxton</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Saint-Etienne-des-Gres">Saint-Etienne-des-Gres</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Saint-Gerard-des-Laurentides">Saint-Gerard-des-Laurentides</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Saint-Mathieu-du-Parc">Saint-Mathieu-du-Parc</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Saint-Maurice">Saint-Maurice</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Saint-Narcisse">Saint-Narcisse</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Saint-Paulin">Saint-Paulin</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Shawinigan-Sud">Shawinigan-Sud</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Shawinigan">Shawinigan</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Trois-Rivieres">Trois-Rivieres</a><br/>
+        <a class="location" (click)="cityCenter($event)" id="Yamachiche">Yamachiche</a>
+    </p>
+</div>
+<div class="center" id="center" (click)="setCenter()">
+  <mat-icon class="white-icon content">center_focus_strong</mat-icon>
+</div>
+<div class="option" id="option">
+    <div title="Afficher Maison" (click)="showHouses()" class="houses" id="houses">
+        <mat-icon [ngClass]="display ? 'white-icon' : 'grey-icon'">home</mat-icon>
+    </div>
+</div>
