@@ -29,13 +29,13 @@ export class GoogleMapsComponent implements OnInit {
    * The longitude that defines the center of the map.
    */
   @Input()
-  longitude: number = 0;
+  public longitude: number = 0;
 
   /**
    * The latitude that defines the center of the map.
    */
   @Input()
-  latitude: number = 0;
+  public latitude: number = 0;
 
   /**
   * The map that defines the google maps object
